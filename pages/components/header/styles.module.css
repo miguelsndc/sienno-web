@@ -1,0 +1,171 @@
+.pageHeader a {
+  text-decoration: none;
+  color: var(--lavender);
+  font: inherit;
+}
+
+.pageHeader a:hover {
+  color: var(--blue600);
+}
+
+.pageHeader {
+  width: 100%;
+  max-height: 12vh;
+  min-height: 90px;
+  position: sticky;
+  background: var(--white);
+  box-shadow: 0 8px 16px -4px var(--shadow);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1.25rem 0;
+  padding-left: 3vw;
+  z-index: 99;
+  position: fixed;
+}
+
+.pageHeader nav {
+  width: 80%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+}
+
+.pageHeader img {
+  width: 5rem;
+  height: 5rem;
+  margin-right: 0.5rem;
+}
+
+.logo h1 {
+  color: var(--blue600);
+  font-size: 2.5rem;
+}
+
+.logo h2 {
+  text-transform: uppercase;
+  font-size: 1.1rem;
+}
+
+.pageHeader ul {
+  list-style: none;
+  display: flex;
+}
+
+.pageHeader li {
+  padding-inline: min(100px, 3vw);
+}
+
+.pageHeader a {
+  font-size: 1.5rem;
+  font-weight: 600;
+}
+
+.openMenuButton {
+  display: none;
+  cursor: pointer;
+}
+
+.closeMenuButton {
+  display: none;
+}
+
+.overlay {
+  position: fixed;
+  inset: 0;
+  background: var(--black);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 300ms;
+}
+
+.overlay.overlayActive {
+  pointer-events: all;
+}
+
+@media (max-width: 768px) {
+  .menu {
+    position: fixed;
+    background: var(--white);
+    right: 0;
+    top: 0;
+    bottom: 0;
+    transform: translateX(101%);
+    transition: transform 300ms;
+    width: 100%;
+    max-width: 75vw;
+    padding: 2rem;
+
+    display: flex;
+    justify-content: center;
+  }
+
+  .closeMenuButton {
+    display: block;
+    border: none;
+    background: none;
+    font-size: 0;
+    display: flex;
+    width: 2.5rem;
+    height: 2.5rem;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    right: 1.5rem;
+    top: 2.5rem;
+  }
+
+  .menu.menuActive {
+    transform: translateX(0);
+  }
+
+  .page-header {
+    justify-content: center;
+    padding: 1.25rem 0;
+  }
+
+  .logo img {
+    width: 100px;
+    height: 70px;
+  }
+
+  .logo h1 {
+    font-size: 2rem;
+  }
+
+  .logo h2 {
+    font-size: 1rem;
+  }
+
+  .openMenuButton {
+    display: block;
+    border: none;
+    background: none;
+    width: 2rem;
+    height: 2rem;
+    font-size: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .openMenuButton img,
+  .closeMenuButtonimg {
+    width: 100%;
+  }
+
+  .menu ul {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;
+    height: 80%;
+    gap: 2rem;
+  }
+}
